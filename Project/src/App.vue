@@ -1,10 +1,10 @@
 <template>
     <div id="app">
-        <div id="nav">
-            <router-link id="home" to="/">  home  </router-link><br />
-            <router-link id="wet" to="/wet-party"> wet party </router-link><br />
-            <router-link id="dry" to="/dry-party"> dry party  </router-link><br />
-            <router-link id="about" to="/about"> about </router-link><br />            
+      <div id="nav">
+            <router-link id="home" to="/">  home  </router-link>
+            <router-link id="wet" to="/wet-party"> wet party </router-link>
+            <router-link id="dry" to="/dry-party"> dry party  </router-link>
+            <router-link id="about" to="/about"> about </router-link>           
         </div>
         <router-view />
     </div>        
@@ -16,17 +16,26 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple');
+@import url('https://fonts.googleapis.com/css2?family=Oswald');
 *{
   background-color: #EFFFFF;
+  font-family: 'Homemade Apple';
 }
 #nav {
   font-family: 'Homemade Apple';
-  font-size: 36px;
+  font-size: 30px;
   color: #FFCCCC;
   text-shadow: 2px 1px 1px #898FFF;
-  margin: auto 30px;
+  margin: 0 30px;
 }
 
+a {
+  text-decoration: none;
+  font-family: 'Homemade Apple';
+  font-size: 30px;
+  color: #FFCCCC;
+  text-shadow: 2px 1px 1px #898FFF;
+}
 #home:hover {
   margin-left: 30.33px;
 }
