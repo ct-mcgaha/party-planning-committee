@@ -1,20 +1,20 @@
 <template>
         <form class="wet-party-form" v-on:submit.prevent="saveParty">
             <section id="guestName">
-            <h3>First + Last Name</h3>
-            <input class="guest-name-input" type="text" placeholder="guest name" v-model="guest.name" required/><span>unless you're Cher or Bono or someone fancy</span>
+            <h3>Guest Name</h3>
+            <input class="guest-name-input" type="text" placeholder="first, last" v-model="guest.name" required/><span>(unless you're Cher or Bono or someone fancy)</span>
             </section>
             <br/>
             <section id="wineChoices">
             <h3>Wine Choices</h3>
             <br/>
             <select><span>red, white, or bubbles</span>
-            <option>Pick Me! Pick Me!</option>
+            <option>Grapes Galore</option>
             <option>(red)</option>
             <option>(white)</option>
             <option>(bubbles)</option>
             </select>
-            <input class="glasses-of-wine" type="text" placeholder="Grapes Galore" v-model="guest.wine" required/><span>how many glasses?</span>
+            <input class="glasses-of-wine" type="text" placeholder="amt of glasses" v-model="guest.wine" required/>
             </section>
             <br/>
             <section id="beerChoices">
@@ -27,18 +27,18 @@
             <option>(IPA)</option>
             <option>(sour)</option>
             </select>
-            <input class="pints-of-beer" type="text" placeholder="Jeremy Beer-imy" v-model="guest.beer" required/><span>how many pints?</span>
+            <input class="pints-of-beer" type="text" placeholder="amt of pints" v-model="guest.beer" required/>
             </section>
             <br/>
             <section id="liquorChoices">
             <h3>Liquor</h3>
             <br/>
             <select><span></span>
-            <option>Gin-ny From The Block</option>
+            <option>House or Premium</option>
             <option>(premium)</option>
             <option>(house)</option>
             </select>
-            <input class="gin-and-tonics" type="text" placeholder="Gin-uinely Excited" v-model="guest.gts" required/><span>how many cocktails?</span>
+            <input class="liquorChoices" type="text" placeholder="amt of cocktails" v-model="guest.gts" required/>
             </section>
             <br/>
             <section id="dinnerChoices">
@@ -46,7 +46,7 @@
                 <option disabled value="">select your dinner choice</option>
                 <option>chicken scallopini</option>
                 <option>ligurian seafood stew</option>
-                <option>nebbiolo braised seitan 'meat'balls</option>
+                <option>nebbiolo braised seitan 'meat'-balls</option>
             </select>
             <span>dinner: {{ dinner }}</span>  
             </section>  
@@ -101,6 +101,7 @@ form > input {
 form > select {
     font-size: 18px;    
 }
+
 
 
 
