@@ -1,108 +1,178 @@
 <template>
-        <form class="wet-party-form" v-on:submit.prevent="saveParty">
-            <section id="guestName">
-            <h3>Guest Name</h3>
-            <input class="guest-name-input" type="text" placeholder="first, last" v-model="guest.name" required/><span>(unless you're Cher or Bono or someone fancy)</span>
-            </section>
-            <br/>
-            <section id="wineChoices">
-            <h3>Wine Choices</h3>
-            <br/>
-            <select><span>red, white, or bubbles</span>
-            <option>Grapes Galore</option>
-            <option>(red)</option>
-            <option>(white)</option>
-            <option>(bubbles)</option>
-            </select>
-            <input class="glasses-of-wine" type="text" placeholder="amt of glasses" v-model="guest.wine" required/>
-            </section>
-            <br/>
-            <section id="beerChoices">
-            <h3>Beer Choices</h3>
-            <br/>
-            <select><span></span>
-            <option>Beer Me</option>
-            <option>(lager)</option>
-            <option>(stout)</option>
-            <option>(IPA)</option>
-            <option>(sour)</option>
-            </select>
-            <input class="pints-of-beer" type="text" placeholder="amt of pints" v-model="guest.beer" required/>
-            </section>
-            <br/>
-            <section id="liquorChoices">
-            <h3>Liquor</h3>
-            <br/>
-            <select><span></span>
-            <option>House or Premium</option>
-            <option>(premium)</option>
-            <option>(house)</option>
-            </select>
-            <input class="liquorChoices" type="text" placeholder="amt of cocktails" v-model="guest.gts" required/>
-            </section>
-            <br/>
-            <section id="dinnerChoices">
-            <select class="dinner" v-model="guest.dinner" required>
-                <option disabled value="">select your dinner choice</option>
-                <option>chicken scallopini</option>
-                <option>ligurian seafood stew</option>
-                <option>nebbiolo braised seitan 'meat'-balls</option>
-            </select>
-            <span>dinner: {{ dinner }}</span>  
-            </section>  
-            <div>
+  <form class="wet-party-form" v-on:submit.prevent="saveParty">
+    <section id="guestName">
+      <h3>Guest Name</h3>
+      <input
+        class="guestNameInput"
+        type="text"
+        placeholder="first, last"
+        v-model="guest.name"
+        required
+      />
+      <p>(unless you're Oprah or Cher)</p>
+    </section>
+    <div class="drinkChoices">
+      <section id="wineChoices">
+        <h3>Wine Choices</h3>
+        <select>
+          <option>Grapes Galore</option>
+          <option>(red)</option>
+          <option>(white)</option>
+          <option>(bubbles)</option>
+        </select>
+        <input
+          class="wineAmt"
+          type="text"
+          placeholder="amt of glasses"
+          v-model="guest.wine"
+          required
+        />
+      </section>
+      <section id="beerChoices">
+        <h3>Beer Choices</h3>
+        <select>
+          <option>Beer Me</option>
+          <option>(lager)</option>
+          <option>(stout)</option>
+          <option>(IPA)</option>
+          <option>(sour)</option>
+        </select>
+        <input
+          class="beerAmt"
+          type="text"
+          placeholder="amt of pints"
+          v-model="guest.beer"
+          required
+        />
+      </section>
+      <section id="liquorChoices">
+        <h3>Liquor</h3>
+        <select>
+          <option>House or Premium</option>
+          <option>(premium)</option>
+          <option>(house)</option>
+        </select>
+        <input
+          class="cocktailAmt"
+          type="text"
+          placeholder="amt of cocktails"
+          v-model="guest.gts"
+          required
+        />
+      </section>
+    </div>
+    <section id="dinnerChoices">
+      <span> dinner: {{ dinner }} </span>
+      <select class="dinner" v-model="guest.dinner" required>
+        <option>select your dinner choice</option>
+        <option>chicken scallopini</option>
+        <option>ligurian seafood stew</option>
+        <option>nebbiolo braised seitan 'meat'-balls</option>
+      </select>
+      <div>
         <button id="saveButton" v-on:click="alertSave">Save</button>
-            </div>
-        </form>
+      </div>
+    </section>
+  </form>
 </template>
 
 <script>
 export default {
-        name: "wet-party-form",
-    data() {
-        return {
-            guest: {
-                name: '',
-                wine: '',
-                beer: '',
-                gts: '',
-                dinner: Option
-            }
-        }
+  name: "wet-party-form",
+  data() {
+    return {
+      guest: {
+        name: "",
+        wine: "",
+        beer: "",
+        gts: "",
+        dinner: Option,
+      },
+    };
+  },
+  methods: {
+    alertSave(event) {
+      if (event.target.id === "saveButton") {
+        alert("LET'S GET THIS PARTY STARTED!");
+      }
     },
-    methods: {
-        alertSave(event) {
-            if (event.target.id === "saveButton") {
-                alert("LET'S GET THIS PARTY STARTED!");
-            }
-        }
-
-    },
-    // methods: {
-    //     saveBook() {
-    //         this.$store.commit('SAVE_BOOK', this.book);
-    //         this.book = {
-    //             title: '',
-    //             author: '',
-    //             read: false,
-    //             isbn: ''
-    //         };
-    //     }
-    // }
-}    
+  },
+  // methods: {
+  //     saveBook() {
+  //         this.$store.commit('SAVE_BOOK', this.book);
+  //         this.book = {
+  //             title: '',
+  //             author: '',
+  //             read: false,
+  //             isbn: ''
+  //         };
+  //     }
+  // }
+};
 </script>
 
 <style>
-
 form > input {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 form > select {
-    font-size: 18px;    
+  font-size: 18px;
 }
 
+input,
+select,
+option {
+  font-family: "Courier New", Courier, monospace;
+}
 
+.wet-party-form {
+  display: flex;
+  flex-direction: column;
+}
 
+#guestName {
+  text-align: center;
+}
 
+.drinkChoices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 25px;
+}
+
+#dinnerChoices {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 25px;
+}
+
+#saveButton {
+  margin-left: 5px;
+}
+
+#saveButton:hover {
+  background-color: #ffcccc;
+  color: #efffff;
+}
+
+/*
+input:focus {
+    background-color: #FFCCCC;
+    color:  #EFFFFF;
+    border-color: #FFCCCC;
+}
+*/
+
+input {
+  margin-left: 5px;
+}
+
+#beerChoices,
+#wineChoices,
+#liquorChoices {
+  text-align: center;
+}
 </style>
