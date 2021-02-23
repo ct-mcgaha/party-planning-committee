@@ -64,7 +64,6 @@
     <section id="dinnerChoices">
       <span> dinner: {{ dinner }} </span>
       <select class="dinner" v-model="guest.dinner" required>
-        <option>select your dinner choice</option>
         <option>chicken scallopini</option>
         <option>ligurian seafood stew</option>
         <option>nebbiolo braised seitan 'meat'-balls</option>
@@ -151,11 +150,13 @@ option {
 
 #saveButton {
   margin-left: 5px;
+  border-radius: 50px;
 }
 
 #saveButton:hover {
   background-color: #ffcccc;
   color: #efffff;
+  box-shadow: 2px 1px 1px #898FFF;
 }
 
 /*

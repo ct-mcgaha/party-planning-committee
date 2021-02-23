@@ -17,25 +17,21 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple');
 @import url('https://fonts.googleapis.com/css2?family=Oswald');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 *{
   background-color: #EFFFFF;
   font-family: 'Homemade Apple';
 }
-#nav {
+#nav a {
   font-family: 'Homemade Apple';
   font-size: 30px;
   color: #FFCCCC;
   text-shadow: 2px 1px 1px #898FFF;
   margin: 0 30px;
-}
-
-a {
   text-decoration: none;
-  font-family: 'Homemade Apple';
-  font-size: 30px;
-  color: #FFCCCC;
-  text-shadow: 2px 1px 1px #898FFF;
 }
+ 
 #home:hover {
   margin-left: 30.33px;
 }

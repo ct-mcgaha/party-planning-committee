@@ -74,7 +74,7 @@
     <section id="dinnerChoices">
            <span>dinner: {{ dinner }}</span>
       <select class="dinner" v-model="guest.dinner" required>
-        <option>select your dinner choice</option>
+
         <option>chicken scallopini</option>
         <option>ligurian seafood stew</option>
         <option>nebbiolo braised seitan 'meat'balls</option>
@@ -101,9 +101,9 @@ export default {
     };
   },
   // methods: {
-  //     saveBook() {
-  //         this.$store.commit('SAVE_BOOK', this.book);
-  //         this.book = {
+  //     alertSave() {
+  //         this.$store.commit('SAVE_CHOICE', this.choice);
+  //         this.choice = {
   //             title: '',
   //             author: '',
   //             read: false,
@@ -126,7 +126,7 @@ form > select {
 input,
 select,
 option {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Amatic SC', cursive;
 }
 
 .dry-party-form {
@@ -154,6 +154,8 @@ option {
 
 #saveButton {
   margin-left: 5px;
+  border-radius: 50px;
+  font-family: 'Amatic SC', cursive;
 }
 
 #saveButton:hover {
