@@ -51,6 +51,7 @@ h3 {
   height: 100px;
   width: 150px;
   font-size: 22px;
+  border-width: thick;
 }
 
 .bothButtons {
@@ -62,10 +63,10 @@ h3 {
 
 .raise:hover,
 .raise:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em #898FFF;
   transform: translateY(-0.25em);
-  background-color: #ffcccc;
+  background-color: #80b2a6;
   color: #efffff;
+  box-shadow: 4px 4px 4px #808cb2;
 }
 
 .animate__animated.animate__flipInX {
@@ -78,11 +79,11 @@ h3 {
 
 #yesButton {
   margin: 5px;
-  border-radius: 50px;
+  border-radius: 40px;
 }
 
 #noButton {
   margin: 5px;
-  border-radius: 50px;
+  border-radius: 40px;
 }
 </style>

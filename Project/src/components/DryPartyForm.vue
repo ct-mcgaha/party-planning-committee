@@ -155,12 +155,18 @@ option {
 #saveButton {
   margin-left: 5px;
   border-radius: 50px;
+  border-width: thick;
   font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
 }
 
 #saveButton:hover {
-  background-color: #ffcccc;
+  background-color: #80b2a6;
   color: #efffff;
+  box-shadow: 4px 4px 4px #808cb2;
 }
 
 input {

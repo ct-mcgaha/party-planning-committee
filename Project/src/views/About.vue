@@ -22,7 +22,7 @@ p {
 
 
 a:link {
-  color: #898FFF; 
+  color: #808cb2; 
   background-color: transparent;
   text-decoration: none;
   font-family: 'Amatic SC', cursive;
@@ -31,7 +31,7 @@ a:link {
 }
 
 a:hover {
-  text-shadow: 2px 1px 1px #ffcccc;;
+  text-shadow: 2px 1px 1px #b2a680;
   background-color: transparent;
   
 }
