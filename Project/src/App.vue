@@ -17,29 +17,37 @@
 </script>
 
 <style>
+/*
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple');
 @import url('https://fonts.googleapis.com/css2?family=Oswald');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Josefin+Slab:wght@400;600&display=swap');
 
 *{
-  background-color: #EFFFFF;
-  font-family: 'Homemade Apple';
+  background-color: #fefefe;
+  font-family: 'Dancing Script', cursive;
 }
 #nav a {
-  font-family: 'Homemade Apple';
-  font-size: 30px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
   color: #b2808c;
   text-shadow: 2px 1px 1px #808cb2; 
-  margin: 0 30px;
+  margin: 0 30px; 
   text-decoration: none;
 }
  
 .border {
   border-style: solid;
   border-color: #b2a680;
+  border-left: #b2a680;
+  border-right: #b2a680;
   border-width: thick;
 }
 
+
+/*
 #home:hover {
   margin-left: 30.33px;
 }
@@ -52,5 +60,5 @@
 #about:hover {
   margin-left: 30.33px;  
 }
-
+*/
 </style>

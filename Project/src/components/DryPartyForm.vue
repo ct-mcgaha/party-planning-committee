@@ -126,7 +126,7 @@ form > select {
 input,
 select,
 option {
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Josefin Slab', serif;
 }
 
 .dry-party-form {
@@ -143,23 +143,22 @@ option {
   flex-direction: row;
   justify-content: space-evenly;
   margin: 25px;
+  text-align: center;
 }
 
 #dinnerChoices {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 25px;
+  align-items: center;
+  text-align: center;
 }
 
 #saveButton {
   margin-left: 5px;
   border-radius: 50px;
   border-width: thick;
-  font-family: 'Amatic SC', cursive;
-  font-size: 20px;
-  height: 50px;
-  width: 50px;
+  font-family: 'Josefin Slab', serif;
   text-align: center;
 }
 
@@ -170,7 +169,7 @@ option {
 }
 
 input {
-  margin-left: 5px;
+  text-align: center;
 }
 
 #seltzerChoices,
