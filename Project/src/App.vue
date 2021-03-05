@@ -46,6 +46,11 @@
   border-width: thick;
 }
 
+.raise:hover,
+.raise:focus {
+  color: #efffff;
+  box-shadow: 2px #808cb2;
+}
 
 /*
 #home:hover {

@@ -41,7 +41,7 @@ h2 {
 }
 
 h3 {
-  font-size: 36px;
+  font-size: 50px;
 }
 
 .mainLanding {
