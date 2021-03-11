@@ -17,7 +17,7 @@
   </div>
   <div id="popupNo" class="modal-content">
     <span class="close">&times;</span>
-    <p>Not A Problem! <br/>Click Here To Get Started.</p> <!-- HERE will be a link to ?? -->
+    <p>Not A Problem! <br/>Click <a href="localhost:8080/about" target="_blank">Here</a> To Get Started.</p> <!-- when you click link, blank pops out but is not sending to about page -->
   </div>
   </div>
   <!--POPUPS END -->
@@ -61,10 +61,15 @@ h3 {
 
 .bothButtons button {
   font-family: 'Josefin Slab', serif;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   font-size: 22px;
+  border-radius: 50%;
   border-width: thick;
+}
+
+div.bothButtons {
+  padding: 60px;
 }
 
 .bothButtons {
@@ -91,7 +96,7 @@ h3 {
 
 #yesButton {
   margin: 5px;
-  border-radius: 40px;
+ 
 }
 
 #yesButton:hover {
@@ -100,7 +105,6 @@ h3 {
 
 #noButton {
   margin: 5px;
-  border-radius: 40px;
 }
 
 #noButton:hover {
@@ -114,25 +118,23 @@ h3 {
 #popupYes {
   border: solid thick #808cb2;
   text-align: center; 
-  width: 160px;
-  height: 160px;
-  border-radius: 30%;
+  width: 40%;
 }
 
 #popupNo {
   border: solid thick #808cb2;
   text-align: center; 
-  width: 160px;
-  height: 160px;
-  border-radius: 30%;
-}
+  width: 40%;
+} 
 
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
-  font-family: 'Josefin Slab', serif;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
 }
 
 .close:hover,

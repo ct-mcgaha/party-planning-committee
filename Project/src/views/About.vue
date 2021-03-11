@@ -12,7 +12,7 @@
        <li>Select the cuisine to be served</li>
        <li>Select the drinks to be served (alcholic & non-alcoholic)</li>
        <li>Your guests will recieve an email to this site to choose their food and drinks</li>
-       <li></li>
+       <li>We'll take care of the rest!</li>
      </ol>
   </div>
 </template>

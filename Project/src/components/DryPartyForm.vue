@@ -1,22 +1,33 @@
 <template>
   <form class="dry-party-form" v-on:submit.prevent="saveParty">
     <section id="guestName">
-      <h3>Guest Name</h3>
+      <h3>Guest</h3>
       <input
         class="guestNameInput"
         type="text"
-        placeholder="first, last"
+        placeholder="first + last name"
         v-model="guest.name"
         required
       />
-      <p>(unless you're Oprah or Cher)</p>
+    <div class="guestPlusOne">
+      <button id="buttonPlusOne" v-on:click.prevent="addGuest" v-show="!hasGuest">add plus one</button>
+      </div>
+      <div v-show="hasGuest">
+      <input
+        class="plusOneNameInput"
+        type="text"
+        placeholder="plus one"
+        v-model="guest.name"
+        required
+      />
+      </div>
     </section>
 
     <div class="drinkChoices">
       <section id="seltzerChoices">
-          <h3>Seltzer Choices </h3>
+          <h3>Seltzers </h3> 
           <select>
-          <option>Bubbles without the Headache</option>
+          <option>Bubbles</option>
           <option>Cherry (Bubly)</option>
           <option>Grapefruit (Bubly)</option>
           <option>Blackberry (Bubly)</option>
@@ -35,7 +46,7 @@
       </section>
 
       <section id="teaChoices">
-          <h3>Hopped-Tea Choices</h3>
+          <h3>Hopped-Teas </h3>
           <select>
           <option>Tea with Hops</option>
           <option>(your choice)</option>
@@ -55,11 +66,11 @@
       </section>
 
       <section id="mocktailChoices">
-          <h3>Mocktail Choices</h3>
+          <h3>Mocktails</h3>
           <select>
           <option>House or Premium</option>
-          <option>(premium)</option>
-          <option>(house)</option>
+          <option>Nolets</option>
+          <option>Titos</option>
         </select>
         <input
           class="mocktailAmt"
@@ -72,15 +83,18 @@
     </div>
 
     <section id="dinnerChoices">
-           <span>dinner: {{ dinner }}</span>
+      <div class="dinnerHeader">
+          <h3> Dinner {{ dinner }}</h3>
+      </div>
+      <div id="dinnerAndSaveBtn">
       <select class="dinner" v-model="guest.dinner" required>
-
         <option>chicken scallopini</option>
         <option>ligurian seafood stew</option>
         <option>nebbiolo braised seitan 'meat'balls</option>
       </select>
       <div>
         <button id="saveButton" v-on:click="alertSave">Save</button>
+      </div>
       </div>
     </section>
   </form>
@@ -97,8 +111,16 @@ export default {
         hoptea: "",
         gts: "",
         dinner: Option,
+        hasGuest: false,
       },
     };
+    },
+    methods: {
+     addGuest(event) {
+      if (event.target.id === "buttonPlusOne") {
+        alert("NOW YOU DON'T HAVE TO DANCE ALONE!");
+      }
+    },
   },
   // methods: {
   //     alertSave() {
@@ -132,6 +154,7 @@ option {
 .dry-party-form {
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 }
 
 #guestName {
@@ -146,11 +169,16 @@ option {
   text-align: center;
 }
 
-#dinnerChoices {
+#dinnerAndSaveBtn {
   display: flex;
   flex-direction: row;
+}
+
+#dinnerChoices {
+  display: flex;
+  flex-direction: column; 
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   text-align: center;
 }
 
@@ -170,6 +198,7 @@ option {
 
 input {
   text-align: center;
+  margin-left: 5px;
 }
 
 #seltzerChoices,

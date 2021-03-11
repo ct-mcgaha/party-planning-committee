@@ -1,24 +1,39 @@
 <template>
   <form class="wet-party-form" v-on:submit.prevent="saveParty">
     <section id="guestName">
-      <h3>Guest Name</h3>
+      <h3>Guest</h3>
       <input
         class="guestNameInput"
         type="text"
-        placeholder="first, last"
+        placeholder="first + last name"
         v-model="guest.name"
         required
       />
-      <p>(unless you're Oprah or Cher)</p>
+      <div class="guestPlusOne">
+      <button id="buttonPlusOne" v-on:click.prevent="addGuest" v-show="!hasGuest">add plus one</button>
+      </div>
+      <div v-show="hasGuest">
+      <input
+        class="plusOneNameInput"
+        type="text"
+        placeholder="plus one"
+        v-model="guest.name"
+        required
+      />
+      </div>
+    
+       <!-- add button and a show-if for a plus one guest? -->
     </section>
     <div class="drinkChoices">
       <section id="wineChoices">
-        <h3>Wine Choices</h3>
+        <h3>Wine</h3>
         <select>
           <option>Grapes Galore</option>
-          <option>(red)</option>
-          <option>(white)</option>
-          <option>(bubbles)</option>
+          <option>Cabernet Sauvignon</option>
+          <option>Tempranillo</option>
+          <option>Chardonnay</option>
+          <option>Sauvignon Blanc</option>
+          <option>Prosecco</option>
         </select>
         <input
           class="wineAmt"
@@ -29,7 +44,7 @@
         />
       </section>
       <section id="beerChoices">
-        <h3>Beer Choices</h3>
+        <h3>Beer</h3>
         <select>
           <option>Beer Me</option>
           <option>(lager)</option>
@@ -62,7 +77,10 @@
       </section>
     </div>
     <section id="dinnerChoices">
-      <span> dinner: {{ dinner }} </span>
+      <div class="dinnerHeader">
+      <h3> Dinner {{ dinner }} </h3>
+      </div>
+      <div id="dinnerAndSaveBtn">
       <select class="dinner" v-model="guest.dinner" required>
         <option>chicken scallopini</option>
         <option>ligurian seafood stew</option>
@@ -70,6 +88,7 @@
       </select>
       <div>
         <button id="saveButton" v-on:click="alertSave">Save</button>
+      </div>
       </div>
     </section>
   </form>
@@ -86,13 +105,27 @@ export default {
         beer: "",
         gts: "",
         dinner: Option,
+        hasGuest: false,
       },
     };
   },
+  /* needed if using v-if, might be using v-show instead
+  props: {
+    enableAdd: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  */
   methods: {
     alertSave(event) {
       if (event.target.id === "saveButton") {
         alert("LET'S GET THIS PARTY STARTED!");
+      }
+    },
+    addGuest(event) {
+      if (event.target.id === "buttonPlusOne") {
+        alert("NOW YOU DON'T HAVE TO DANCE ALONE!");
       }
     },
   },
@@ -128,6 +161,7 @@ option {
 .wet-party-form {
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 }
 
 #guestName {
@@ -139,6 +173,16 @@ option {
   flex-direction: row;
   justify-content: space-evenly;
   margin: 25px;
+}
+
+#buttonPlusOne {
+  font-family: 'Josefin Slab', serif;
+  margin-top: 5px;
+}
+
+#dinnerAndSaveBtn {
+  display: flex;
+  flex-direction: row;
 }
 
 #dinnerChoices {
@@ -154,7 +198,6 @@ option {
   border-radius: 50px;
   border-width: thick;
   font-family: 'Josefin Slab', serif;
-  
   text-align: center;
 }
 
@@ -166,6 +209,7 @@ option {
 
 input {
   text-align: center;
+  margin-left: 5px;
 }
 
 #beerChoices,
@@ -174,3 +218,5 @@ input {
   text-align: center;
 }
 </style>
+
+<!-- NEED TO ADD LOGIC, ALL FIELDS MUST BE FILLED OUT IN ORDER TO USE SAVE BUTTON -->

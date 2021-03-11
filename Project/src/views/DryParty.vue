@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>keep it dry... not boring!</h1>
+      <h1 class="animate__animated animate__slideInRight">keep it dry... not boring!</h1>
       <dry-party-form />
   </div>
 </template>
@@ -13,5 +13,8 @@ export default {
 </script>
 
 <style>
+.animate__animated.animate__slideInRight {
+   --animate-duration: 2s;
+}
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>let's pop some bubbles & get some drinks flowing!</h1>
+    <h1 class="animate__animated animate__slideInRight">let's pop some bubbles & get some drinks flowing!</h1>
     <wet-party-form />
   </div>
 </template>
@@ -13,8 +13,9 @@ export default {
 </script>
 
 <style>
-h1 {
-    font-size: 24px;
+
+.animate__animated.animate__slideInRight {
+   --animate-duration: 2s;
 }
 
 </style>
