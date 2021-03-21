@@ -52,18 +52,23 @@
   box-shadow: 2px #808cb2;
 }
 
-/*
 #home:hover {
-  margin-left: 30.33px;
+font-size: 3em;
+text-decoration: underline;
 }
+
 #wet:hover {
-    margin-left: 30.33px;
+font-size: 3em;
+text-decoration: underline;
 }
+
 #dry:hover {
-  margin-left: 30.33px;
+font-size: 3em;
+text-decoration: underline;
 }
 #about:hover {
-  margin-left: 30.33px;  
+font-size: 3em;
+text-decoration: underline;
 }
-*/
+
 </style>

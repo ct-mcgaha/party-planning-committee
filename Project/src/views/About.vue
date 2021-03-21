@@ -7,6 +7,7 @@
           possibly can, and - most importantly - do it without the stress!</p>
      </div>
      <h3>How To Plan The Perfect Party</h3>
+     <div class="how">
      <ol>
        <li>Create a guest list, you'll need to know how many will attend</li>
        <li>Select the cuisine to be served</li>
@@ -14,6 +15,7 @@
        <li>Your guests will recieve an email to this site to choose their food and drinks</li>
        <li>We'll take care of the rest!</li>
      </ol>
+     </div>
   </div>
 </template>
 
@@ -67,4 +69,7 @@ a:hover {
   font-size: 50px;
 }
 
+.how li{
+  font-family: 'Josefin Slab', serif;
+}
 </style>
