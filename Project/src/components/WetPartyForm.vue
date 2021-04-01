@@ -22,7 +22,6 @@
       />
       </div>
     
-       <!-- add button and a show-if for a plus one guest? -->
     </section>
     <div class="drinkChoices">
       <section id="wineChoices">
